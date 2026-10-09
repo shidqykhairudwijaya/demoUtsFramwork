@@ -1,4 +1,3 @@
-```blade
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -33,6 +32,10 @@
                 <h2 class="text-lg font-bold text-gray-800">
                     {{ $post->title }}
                 </h2>
+
+                <p class="text-xs font-semibold mt-1 {{ $post->user_id == 1 ? 'text-red-500' : 'text-gray-500' }}">
+                    Ditulis oleh: {{ $post->user->name ?? 'Unknown' }}
+                </p>
 
                 <p class="mt-2 text-gray-600">
                     {{ $post->content }}
